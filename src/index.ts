@@ -97,7 +97,9 @@ const main = () => {
   }
 
   console.log(
-    `Data ${isDataIid ? 'can' : 'cannot'} be assumed to be independent and identically distributed.`
+    `The data ${
+      isDataIid ? 'can' : 'cannot'
+    } be assumed to be independent and identically distributed.`
   );
 };
 

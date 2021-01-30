@@ -3,12 +3,20 @@
   "version": "1.0.0",
   "description": "A script to run eleven statistical tests which will determine whether a collection of random variables are independent and identically distributed (IID).",
   "main": "dist/index.js",
-  "types": "index.d.ts",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "test": "mocha",
     "lint": "eslint src/*.ts",
-    "prepublish": "tsc"
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
@@ -29,6 +37,9 @@
     "url": "https://github.com/zaljubouri/iid-tests/issues"
   },
   "homepage": "https://github.com/zaljubouri/iid-tests#readme",
+  "bin": {
+    "run-iid-tests": "./dist/index.js"
+  },
   "devDependencies": {
     "@types/chai": "^4.2.14",
     "@types/mocha": "^8.2.0",
