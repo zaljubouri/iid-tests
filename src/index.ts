@@ -23,7 +23,7 @@ type TestResult = {
   counterOne: number;
 };
 
-const main = () => {
+const main = async () => {
   let file: string;
 
   try {

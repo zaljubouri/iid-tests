@@ -116,15 +116,15 @@ describe('IidStatistics', () => {
     });
   });
 
-  describe('#compression', () => {
-    const tests = [{ input: [144, 21, 139, 0, 0, 15], expected: 23 }];
+  // describe('#compression', () => {
+  //   const tests = [{ input: [144, 21, 139, 0, 0, 15], expected: 23 }];
 
-    tests.forEach((test) => {
-      it('should do a compression test correctly', () => {
-        const result = IidTestMethods.compression(test.input);
+  //   tests.forEach((test) => {
+  //     it('should do a compression test correctly', () => {
+  //       const result = IidTestMethods.compression(test.input);
 
-        result.should.equal(test.expected);
-      });
-    });
-  });
+  //       result.should.equal(test.expected);
+  //     });
+  //   });
+  // });
 });

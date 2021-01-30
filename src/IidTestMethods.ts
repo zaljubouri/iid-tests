@@ -25,8 +25,8 @@ export class IidTestMethods {
         return IidTestMethods.periodicity(values, p);
       case IidTestName.Covariance:
         return IidTestMethods.covariance(values, p);
-      case IidTestName.Compression:
-        return IidTestMethods.compression(values);
+      // case IidTestName.Compression:
+      //   return IidTestMethods.compression(values);
       default:
         return -1;
     }
@@ -255,13 +255,13 @@ export class IidTestMethods {
     return result;
   };
 
-  static compression = (values: number[]): number => {
-    const stringValues = Buffer.from(values.join(' '));
+  // static compression = (values: number[]): number => {
+  //   const stringValues = Buffer.from(values.join(' '));
 
-    const compressed = zlib.deflateSync(stringValues);
+  //   const compressed = zlib.deflateSync(stringValues);
 
-    return compressed.byteLength;
-  };
+  //   return compressed.byteLength;
+  // };
 
   static shuffleArray = (array: number[]): number[] => {
     for (let i = array.length - 1; i > 0; i--) {
