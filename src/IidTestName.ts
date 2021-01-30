@@ -9,5 +9,5 @@ export enum IidTestName {
   MaxCollision = 'MAX_COLLISION',
   Periodicity = 'PERIODICITY',
   Covariance = 'COVARIANCE',
-  Compression = 'COMPRESSION',
+  // Compression = 'COMPRESSION',
 }
