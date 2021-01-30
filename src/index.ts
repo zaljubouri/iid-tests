@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import yargs, { string } from 'yargs';
+import yargs from 'yargs';
 import fs from 'fs';
 import { IidTestName } from './IidTestName';
 import { IidTestMethods } from './IidTestMethods';
