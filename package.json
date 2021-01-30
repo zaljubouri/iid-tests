@@ -2,11 +2,13 @@
   "name": "iid-tests",
   "version": "1.0.0",
   "description": "A script to run eleven statistical tests which will determine whether a collection of random variables are independent and identically distributed (IID).",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
+  "types": "index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "mocha",
-    "lint": "eslint src/*.ts"
+    "lint": "eslint src/*.ts",
+    "prepublish": "tsc"
   },
   "repository": {
     "type": "git",
