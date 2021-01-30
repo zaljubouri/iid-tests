@@ -11,7 +11,7 @@ This tool is intended to be ran from the CLI using `npx`.
 Run the tests on a CSV file containing (ideally) 1,000,000+ numbers.
 
 ```
-Usage: npx run-iid-tests -f [filename.csv]
+Usage: npx iid-tests -f [filename.csv]
 
 Options:
   -f, --file     Load a .csv containing a sequential dataset of numbers
@@ -26,7 +26,7 @@ Options:
 ### Typical
 
 ```
-$ npx run-iid-tests -f test.csv
+$ npx iid-tests -f test.csv
 Given dataset size is 7.
 A sample containing less than 1,000,000 numbers may give inaccurate results.
 10000 / 10000 arrays tested
@@ -37,7 +37,7 @@ The data cannot be assumed to be independent and identically distributed.
 ### With tabular results
 
 ```
-$ npx run-iid-tests -f test.csv -r
+$ npx iid-tests -f test.csv -r
 Given dataset size is 532.
 A sample containing less than 1,000,000 numbers may give inaccurate results.
 10000 / 10000 arrays tested

@@ -37,7 +37,7 @@
   },
   "homepage": "https://github.com/zaljubouri/iid-tests#readme",
   "bin": {
-    "run-iid-tests": "./dist/index.js"
+    "iid-tests": "./dist/index.js"
   },
   "devDependencies": {
     "@types/chai": "^4.2.14",
