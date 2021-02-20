@@ -3,16 +3,22 @@ import yargs from 'yargs';
 import fs from 'fs';
 import { IidTestName } from './IidTestName';
 import { IidTestMethods } from './IidTestMethods';
+import { EntropyEstimationMethods } from './EntropyEstimationMethods';
 
 const argv = yargs(process.argv.slice(2))
   .usage('Usage: $0 -f [filename.csv]')
-  .options({ f: { type: 'string', demandOption: true }, r: { type: 'boolean' } })
+  .options({
+    f: { type: 'string', demandOption: true },
+    r: { type: 'boolean' },
+    e: { type: 'boolean' },
+  })
   .help('h')
-  .alias({ v: 'version', f: 'file', r: 'results', h: 'help' })
+  .alias({ v: 'version', f: 'file', r: 'results', e: 'entropy', h: 'help' })
   .nargs('f', 1)
   .describe({
     f: 'Load a .csv containing a sequential dataset of numbers',
     r: 'Show results of each statistical test',
+    e: 'Entropy estimation',
   })
   .demandOption(['file']).argv;
 
@@ -38,6 +44,11 @@ const main = async () => {
   console.log(`Given dataset size is ${sampleSize}.`);
   if (values.length < 1000000)
     console.warn('A sample containing less than 1,000,000 numbers may give inaccurate results.');
+
+  if (argv.e) {
+    console.log(EntropyEstimationMethods.mostCommonValue(values));
+    return;
+  }
 
   const counterZero: Record<string, number> = {};
   const counterOne: Record<string, number> = {};
