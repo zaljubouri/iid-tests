@@ -2,9 +2,11 @@
 
 https://www.npmjs.com/package/iid-tests
 
-A script to run eleven statistical tests which will determine whether a collection of random variables are independent and identically distributed (IID).
+A script to run eleven* statistical tests which will determine whether a collection of random variables are independent and identically distributed (IID).
 
 This tool is intended to be ran from the CLI using `npx`.
+
+\* Due to a memory leak issue with zlib, the compression test has been commented out and so this package will only run ten tests.
 
 ## Usage
 
